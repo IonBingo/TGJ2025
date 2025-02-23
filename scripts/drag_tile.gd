@@ -3,6 +3,7 @@ extends Node2D
 var draggable = false
 var in_slot = false
 var locked_to_slot = false
+var overlapping = false
 var target_slot
 var occupied_slot
 var offset: Vector2
@@ -15,8 +16,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if draggable:
-		if Input.is_action_just_pressed("click_r"):
-			$Anchor.rotation_degrees += 90
 		if Input.is_action_just_pressed("click_l"):
 			if locked_to_slot:
 				locked_to_slot = false
@@ -26,11 +25,17 @@ func _process(delta):
 			offset = get_global_mouse_position() - global_position
 			Globals.is_dragging = true
 		if Input.is_action_pressed("click_l"):
+			if Input.is_action_just_pressed("click_r"):
+				$Anchor.rotation_degrees += 90
 			var temp = get_global_mouse_position() - offset
+			if overlapping:
+				$Anchor/Sprite2D.modulate = Color.DARK_RED
+			else:
+				$Anchor/Sprite2D.modulate = Color.WHITE
 			global_position = Vector2(snapped(temp.x,16), snapped(temp.y,16))
 		elif Input.is_action_just_released("click_l"):
 			Globals.is_dragging = false
-			if in_slot and not target_slot.occupied:
+			if in_slot and not target_slot.occupied and not overlapping:
 				$Anchor/Sprite2D.modulate = Color.WHITE
 				print(target_slot.global_position)
 				target_slot.occupied = true
@@ -66,7 +71,6 @@ func _on_area_2d_body_exited(body):
 	if body.is_in_group('slots'):
 		in_slot = false
 
-
 func _on_room_shape_mouse_entered():
 	if not Globals.is_dragging:
 		draggable = true
@@ -77,3 +81,12 @@ func _on_room_shape_mouse_exited():
 	if not Globals.is_dragging:
 		draggable = false
 		$Anchor/Sprite2D.modulate = Color.WHITE
+
+
+func _on_room_shape_area_entered(area):
+	overlapping = true
+
+
+func _on_room_shape_area_exited(area):
+	if $Anchor/RoomShape.get_overlapping_areas().size() == 0:
+		overlapping = false
