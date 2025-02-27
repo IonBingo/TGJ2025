@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://w77tdmedusl4"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_j63fx"]
+[ext_resource type="PackedScene" uid="uid://dllrth1hd671" path="res://scenes/room_slot.tscn" id="2_jit5p"]
+[ext_resource type="PackedScene" uid="uid://dbiw45jojndsq" path="res://scenes/oob_tile.tscn" id="3_2s0w5"]
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="4_2vhe7"]
+[ext_resource type="PackedScene" uid="uid://u6q7icpah08p" path="res://scenes/l_room.tscn" id="5_0lqmc"]
+[ext_resource type="Texture2D" uid="uid://dgw63kkdlvy2f" path="res://asset/Wand.png" id="5_ijybh"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_od775"]
+scenes/1/scene = ExtResource("2_jit5p")
+scenes/2/scene = ExtResource("3_2s0w5")
+
+[sub_resource type="TileSet" id="TileSet_mk7tt"]
+sources/0 = SubResource("TileSetScenesCollectionSource_od775")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_j63fx")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mk7tt")
+format = 2
+layer_0/tile_data = PackedInt32Array(524305, 0, 65536, 589841, 0, 65536, 524306, 0, 65536, 589842, 0, 65536, 458768, 0, 131072, 524304, 0, 131072, 458769, 0, 131072, 458770, 0, 131072, 589840, 0, 131072, 655377, 0, 65536, 655376, 0, 131072, 655378, 0, 65536, 655379, 0, 65536, 589843, 0, 65536, 524307, 0, 65536, 458771, 0, 131072, 720912, 0, 131072, 720913, 0, 131072, 720914, 0, 131072, 720915, 0, 131072, 720916, 0, 131072, 655380, 0, 131072, 589844, 0, 131072, 524308, 0, 131072, 458772, 0, 131072)
+
+[node name="Rooms" type="Node" parent="."]
+
+[node name="Draggable" parent="Rooms" instance=ExtResource("4_2vhe7")]
+position = Vector2(111, 129)
+room_type = 1
+
+[node name="Draggable3" parent="Rooms" instance=ExtResource("4_2vhe7")]
+position = Vector2(232, 270)
+room_type = 3
+
+[node name="Draggable4" parent="Rooms" instance=ExtResource("4_2vhe7")]
+position = Vector2(116, 233)
+room_type = 2
+
+[node name="Draggable5" parent="Rooms" instance=ExtResource("5_0lqmc")]
+position = Vector2(169, 210)
+room_type = 0
+
+[node name="Draggable6" parent="Rooms" instance=ExtResource("5_0lqmc")]
+position = Vector2(151, 133)
+room_type = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 54.0
+offset_top = 306.0
+offset_right = 149.0
+offset_bottom = 332.0
+text = "Next Puzzle"
+
+[node name="Cursor" type="Node2D" parent="."]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Cursor"]
+texture = ExtResource("5_ijybh")
+centered = false
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VScrollBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

@@ -1,17 +1,29 @@
 extends Node2D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CONFINED_HIDDEN
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	$Cursor.global_position = get_global_mouse_position()
 	var all_valid = true
+	var scroll_delta = 0
+	if Globals.current_grab_state == Globals.grab_states.N:
+		if Input.is_action_just_pressed("scrup"):
+			scroll_delta = 20
+			Globals.scroll_offset += 20
+			Globals.scroll_offset = clamp(Globals.scroll_offset, -500, 0)
+		elif Input.is_action_just_pressed("scrdn"):
+			scroll_delta = -20
+			Globals.scroll_offset -= 20
+			Globals.scroll_offset = clamp(Globals.scroll_offset, -500, 0) 
 	for room in $Rooms.get_children():
 		if room.locked_to_slot:
 			room.check_valid()
+		else:
+			room.global_position.y += scroll_delta
+			room.global_position.y = clamp(room.global_position.y, room.start_pos.y - 500, room.start_pos.y)
 		all_valid = all_valid and room.valid
 	$Button.visible = all_valid
 	
