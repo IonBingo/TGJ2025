@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4l8wmmit8vl1" path="res://scenes/puzzle_3/sunroom.tscn" id="8_0i1tt"]
 [ext_resource type="PackedScene" uid="uid://b1128aw2s2t00" path="res://scenes/puzzle_3/bedroom.tscn" id="9_cm2ba"]
 
-[node name="Level" instance=ExtResource("1_02bbx")]
+[node name="Level2" instance=ExtResource("1_02bbx")]
 
 [node name="TileMap" parent="." index="1"]
 layer_0/tile_data = PackedInt32Array(720915, 524289, 1, 786451, 524289, 1, 786452, 589825, 2, 786453, 589825, 2, 786454, 589825, 2, 786455, 589825, 2, 720921, 720897, 0, 786457, 720897, 1, 786456, 589825, 2, 720920, 655361, 0, 720919, 393217, 1, 720918, 589825, 2, 720917, 589825, 2, 720916, 589825, 2, 851993, 720897, 3, 851992, 589825, 3, 851991, 589825, 3, 851990, 589825, 3, 851989, 589825, 3, 851988, 589825, 3, 851987, 524289, 3, 655379, 524289, 0, 655380, 327681, 1, 655381, 589825, 2, 655383, 720897, 0, 655382, 393217, 1, 589846, 720897, 0, 589845, 393217, 1, 589844, 524289, 1, 524308, 524289, 0, 524309, 720897, 0)
