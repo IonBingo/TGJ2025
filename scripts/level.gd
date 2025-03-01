@@ -25,9 +25,9 @@ func _process(_delta):
 			Globals.scroll_offset -= 20
 			Globals.scroll_offset = clamp(Globals.scroll_offset, -500, 0) 
 	for room in $Rooms.get_children():
-		if room.locked_to_slot:
+		if room.locked_to_slot or room.fixed_room:
 			room.check_valid()
-		else:
+		elif not room.fixed_room:
 			room.global_position.y += scroll_delta
 			room.global_position.y = clamp(room.global_position.y, room.start_pos.y - 500, room.start_pos.y)
 		all_valid = all_valid and room.valid
