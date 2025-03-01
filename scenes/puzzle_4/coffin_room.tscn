@@ -1,15 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://el7q3rapnxq4"]
+[gd_scene load_steps=16 format=3 uid="uid://mmckirhsk4cl"]
 
-[ext_resource type="Script" path="res://scripts/drag_tile.gd" id="1_gmado"]
-[ext_resource type="Texture2D" uid="uid://6rf1bl0duvbx" path="res://asset/BasicRoomTileset.png" id="2_2dxgc"]
-[ext_resource type="Texture2D" uid="uid://ga2s1kfu042k" path="res://asset/AutotileTemplate.png" id="2_lpdie"]
-[ext_resource type="Texture2D" uid="uid://dky7oul6bppt0" path="res://asset/KitchenTileset.png" id="4_ha2om"]
-[ext_resource type="Texture2D" uid="uid://2rs1ffyg34ro" path="res://asset/PortalRoomTileset.png" id="5_y68hm"]
-[ext_resource type="Texture2D" uid="uid://dt2i7hbm83y25" path="res://asset/LivingRoom.png" id="6_7ajym"]
-[ext_resource type="Texture2D" uid="uid://d2tm7m6kf6ifp" path="res://asset/VampireRoomTileset.png" id="7_orjbr"]
+[ext_resource type="Script" path="res://scripts/drag_tile.gd" id="1_xpx4i"]
+[ext_resource type="Texture2D" uid="uid://6rf1bl0duvbx" path="res://asset/BasicRoomTileset.png" id="2_ttsw3"]
+[ext_resource type="Texture2D" uid="uid://ga2s1kfu042k" path="res://asset/AutotileTemplate.png" id="3_l51lj"]
+[ext_resource type="Texture2D" uid="uid://dky7oul6bppt0" path="res://asset/KitchenTileset.png" id="4_6lef2"]
+[ext_resource type="Texture2D" uid="uid://2rs1ffyg34ro" path="res://asset/PortalRoomTileset.png" id="5_1rtkx"]
+[ext_resource type="Texture2D" uid="uid://dt2i7hbm83y25" path="res://asset/LivingRoom.png" id="6_rqwfi"]
+[ext_resource type="Texture2D" uid="uid://d2tm7m6kf6ifp" path="res://asset/VampireRoomTileset.png" id="7_nj0jl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_04q1r"]
-texture = ExtResource("2_2dxgc")
+texture = ExtResource("2_ttsw3")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
@@ -435,7 +435,7 @@ texture = ExtResource("2_2dxgc")
 11:3/0/terrains_peering_bit/top_side = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v08of"]
-texture = ExtResource("2_lpdie")
+texture = ExtResource("3_l51lj")
 0:0/0 = 0
 0:0/0/terrain_set = 0
 0:0/0/terrain = 0
@@ -861,7 +861,7 @@ texture = ExtResource("2_lpdie")
 9:2/0/terrains_peering_bit/top_right_corner = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_al85m"]
-texture = ExtResource("4_ha2om")
+texture = ExtResource("4_6lef2")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 1
@@ -1287,7 +1287,7 @@ texture = ExtResource("4_ha2om")
 11:3/0/terrains_peering_bit/top_side = 1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uscry"]
-texture = ExtResource("5_y68hm")
+texture = ExtResource("5_1rtkx")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 2
@@ -1713,13 +1713,13 @@ texture = ExtResource("5_y68hm")
 11:3/0/terrains_peering_bit/top_side = 2
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kx2ns"]
-texture = ExtResource("6_7ajym")
+texture = ExtResource("6_rqwfi")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mguu2"]
-texture = ExtResource("7_orjbr")
+texture = ExtResource("7_nj0jl")
 0:0/0 = 0
 0:0/0/terrain_set = 1
 0:0/0/terrain = 3
@@ -2169,7 +2169,7 @@ sources/5 = SubResource("TileSetAtlasSource_mguu2")
 size = Vector2(16.5, 16)
 
 [node name="Draggable" type="Node2D"]
-script = ExtResource("1_gmado")
+script = ExtResource("1_xpx4i")
 
 [node name="Anchor" type="Node2D" parent="."]
 position = Vector2(8, 8)

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfi7adjgqogfv"]
+[gd_scene load_steps=9 format=3 uid="uid://dfi7adjgqogfv"]
 
 [ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_s2uok"]
 [ext_resource type="PackedScene" uid="uid://bvwux1f1wy4xt" path="res://scenes/puzzle_2/kitchen.tscn" id="2_ub0vb"]
 [ext_resource type="PackedScene" uid="uid://u6q7icpah08p" path="res://scenes/l_room.tscn" id="3_y4fov"]
 [ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="4_o4wsi"]
+[ext_resource type="PackedScene" uid="uid://dnnikyestt2ks" path="res://scenes/puzzle_2/den.tscn" id="5_56ysq"]
+[ext_resource type="PackedScene" uid="uid://gactjrjokh2w" path="res://scenes/puzzle_2/dining_room.tscn" id="6_plckp"]
+[ext_resource type="PackedScene" uid="uid://bbbnyxe7d34ve" path="res://scenes/puzzle_2/bathroom_2.tscn" id="7_yw17g"]
+[ext_resource type="PackedScene" uid="uid://k5dm7eyiebai" path="res://scenes/puzzle_2/practice_room.tscn" id="8_41u2c"]
 
 [node name="Level" instance=ExtResource("1_s2uok")]
 
@@ -15,10 +19,22 @@ layer_1/tile_data = PackedInt32Array(524308, 0, 65536, 589844, 0, 65536, 655380,
 position = Vector2(16, 32)
 
 [node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("3_y4fov")]
-position = Vector2(16, 112)
+position = Vector2(52, 82)
 
 [node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("4_o4wsi")]
-position = Vector2(16, 160)
+position = Vector2(64, 130)
 
 [node name="Draggable4" parent="Rooms" index="3" instance=ExtResource("4_o4wsi")]
-position = Vector2(16, 208)
+position = Vector2(15, 156)
+
+[node name="Draggable5" parent="Rooms" index="4" instance=ExtResource("5_56ysq")]
+position = Vector2(25, 292)
+
+[node name="Draggable6" parent="Rooms" index="5" instance=ExtResource("6_plckp")]
+position = Vector2(34, 183)
+
+[node name="Draggable7" parent="Rooms" index="6" instance=ExtResource("7_yw17g")]
+position = Vector2(17, 112)
+
+[node name="Draggable8" parent="Rooms" index="7" instance=ExtResource("8_41u2c")]
+position = Vector2(20, 222)

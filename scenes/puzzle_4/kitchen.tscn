@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://s1t5u1ocr05f"]
+
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="1_qo4p7"]
+
+[node name="Draggable" instance=ExtResource("1_qo4p7")]
+
+[node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
+polygon = PackedVector2Array(-27, 28, -27, 38, -37, 38, -37, 28)
+
+[node name="CollisionPolygon2D2" parent="Anchor/Edges" index="1"]
+position = Vector2(13, 64)
+polygon = PackedVector2Array(24, -21.3642, 24, -11.1908, -18, -11.1908, -18, -21.3642)
+
+[node name="CollisionPolygon2D3" parent="Anchor/Edges" index="2"]
+position = Vector2(32, -32)
+polygon = PackedVector2Array(-21, 27, 5, 27, 5, 37, -21, 37)
+
+[node name="CollisionPolygon2D5" parent="Anchor/Edges" index="3"]
+position = Vector2(4.00001, 26)
+polygon = PackedVector2Array(-24.1699, -49.5226, -24.1699, -33.5476, -40.2832, -33.5476, -40.2832, -49.5226)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Anchor/Edges" index="4"]
+position = Vector2(20, 10)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -49.5226, -24.1699, -33.5476, -40.2832, -33.5476, -40.2832, -49.5226)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Anchor/Edges" index="5"]
+position = Vector2(-12, 42)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -49.5226, -24.1699, -33.5476, -40.2832, -33.5476, -40.2832, -49.5226)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Anchor/Edges" index="6"]
+position = Vector2(68, 26)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -23.9625, -24.1699, 17.5725, -40.2832, 17.5725, -40.2832, -23.9625)
+
+[node name="RoomTiles" parent="Anchor" index="1"]
+layer_0/tile_data = PackedInt32Array(0, 2, 0, 131072, 524290, 3, 65536, 458754, 3, 65537, 655362, 0, 131073, 589826, 3, 65538, 720898, 0, 131074, 720898, 3, 131071, 65538, 3)
+
+[node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
+polygon = PackedVector2Array(5, 37, -5, 37, -5, 21, -21, 21, -21, 11, -5, 11, -5, -5, 5, -5, 5, 11, 37, 11, 37, 37)
