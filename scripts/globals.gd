@@ -2,6 +2,7 @@ extends Node
 
 var scroll_offset: int = 0
 var is_dragging: bool = false
+var valid_wand: bool = true
 
 enum room_types
 {

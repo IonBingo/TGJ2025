@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://d23fatxovb4bx"]
+
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="1_ihyfi"]
+
+[node name="Draggable" instance=ExtResource("1_ihyfi")]
+
+[node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
+polygon = PackedVector2Array(-27, -4, -27, 6, -53, 6, -53, -4)
+
+[node name="CollisionPolygon2D2" parent="Anchor/Edges" index="1"]
+position = Vector2(16, 48)
+polygon = PackedVector2Array(-11, -21.3642, -11, -11.1908, -53, -11.1907, -53, -21.3642)
+
+[node name="CollisionPolygon2D3" parent="Anchor/Edges" index="2"]
+polygon = PackedVector2Array(-5, 27, 5, 27, 5, 53, -5, 53)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Anchor/Edges" index="4"]
+position = Vector2(-28, 26)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -23.9625, -24.1699, -7.98751, -40.2832, -7.98751, -40.2832, -23.9625)
+
+[node name="RoomTiles" parent="Anchor" index="1"]
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 131070, 65536, 3, 131071, 131072, 3, 65536, 196608, 2)
+
+[node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
+polygon = PackedVector2Array(5, 21, -37, 21, -37, 11, -5, 11, -5, -5, 5, -5)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmyodwthihx2u"]
+
+[ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_f261i"]
+[ext_resource type="PackedScene" uid="uid://baebr68bhewjv" path="res://scenes/puzzle_1/back_offices.tscn" id="2_wic70"]
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="3_5v2sn"]
+[ext_resource type="PackedScene" uid="uid://d23fatxovb4bx" path="res://scenes/puzzle_1/lobby_and_waiting_area.tscn" id="4_k74s1"]
+
+[node name="Level" instance=ExtResource("1_f261i")]
+next_level = "res://scenes/puzzle_2/2_magic_student_apartment.tscn"
+
+[node name="TileMap" parent="." index="1"]
+layer_0/tile_data = PackedInt32Array(720917, 524289, 3, 655381, 524289, 1, 589845, 524289, 0, 589846, 655361, 0, 655382, 589825, 2, 720918, 589825, 3, 720919, 720897, 3, 655383, 720897, 1, 589847, 720897, 0)
+layer_1/tile_data = PackedInt32Array(589845, 0, 65536, 655381, 0, 65536, 720917, 0, 65536, 720918, 0, 65536, 655382, 0, 65536, 589846, 0, 65536, 655383, 0, 65536, 720919, 0, 65536, 589847, 0, 65536, 720916, 0, 131072, 655380, 0, 131072, 589844, 0, 131072, 524308, 0, 131072, 524309, 0, 131072, 524310, 0, 131072, 524311, 0, 131072, 524312, 0, 131072, 589848, 0, 131072, 655384, 0, 131072, 720920, 0, 131072, 786456, 0, 131072, 786455, 0, 131072, 786454, 0, 131072, 786453, 0, 131072, 786452, 0, 131072)
+
+[node name="Draggable" parent="Rooms" index="0" instance=ExtResource("2_wic70")]
+position = Vector2(16, 32)
+
+[node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("3_5v2sn")]
+position = Vector2(16, 160)
+
+[node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("4_k74s1")]
+position = Vector2(48, 96)
+
+[node name="Level Title" parent="." index="5"]
+text = "Divination
+Office"
+horizontal_alignment = 1

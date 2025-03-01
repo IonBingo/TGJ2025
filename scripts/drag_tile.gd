@@ -23,6 +23,9 @@ var start_pos: Vector2
 # Keeps track of when piece was originally a living room
 var is_living: bool = false
 
+signal invalid_wand
+signal valid_wand
+
 # Gets the size of a room in number of cells
 func get_room_size() -> int:
 	return $Anchor/RoomTiles.get_used_cells(0).size()
@@ -117,6 +120,11 @@ func _process(_delta):
 	if draggable:
 		$Anchor/RoomTiles.position.y = -10
 		z_index = 1
+		if Globals.current_grab_state == Globals.grab_states.Y:
+			if not in_slot or target_slot.occupied or overlapping:
+				Globals.valid_wand = false
+			else:
+				Globals.valid_wand = true
 		if Input.is_action_just_pressed("click_l"):
 			if Globals.current_grab_state == Globals.grab_states.N:			
 				if locked_to_slot:

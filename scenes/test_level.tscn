@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://w77tdmedusl4"]
+[gd_scene load_steps=13 format=3 uid="uid://w77tdmedusl4"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_j63fx"]
 [ext_resource type="Texture2D" uid="uid://bca5s3fdbeusg" path="res://asset/ScrollCanvas.png" id="2_0lara"]
 [ext_resource type="PackedScene" uid="uid://dllrth1hd671" path="res://scenes/room_slot.tscn" id="2_jit5p"]
 [ext_resource type="PackedScene" uid="uid://dbiw45jojndsq" path="res://scenes/oob_tile.tscn" id="3_2s0w5"]
-[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="4_2vhe7"]
 [ext_resource type="Texture2D" uid="uid://dhxvtkqflx61e" path="res://asset/DottedFloorTileset.png" id="4_jvamc"]
-[ext_resource type="PackedScene" uid="uid://u6q7icpah08p" path="res://scenes/l_room.tscn" id="5_0lqmc"]
 [ext_resource type="Texture2D" uid="uid://dgw63kkdlvy2f" path="res://asset/Wand.png" id="5_ijybh"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_od775"]
@@ -352,8 +350,21 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetScenesCollectionSource_od775")
 sources/1 = SubResource("TileSetAtlasSource_yuh6b")
 
+[sub_resource type="SystemFont" id="SystemFont_hsf3w"]
+font_italic = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_7lt0i"]
+line_spacing = 1.0
+font = SubResource("SystemFont_hsf3w")
+font_size = 15
+
+[sub_resource type="LabelSettings" id="LabelSettings_13khe"]
+line_spacing = 1.0
+font_size = 15
+
 [node name="Level" type="Node2D"]
 script = ExtResource("1_j63fx")
+next_level = "res://scenes/test_level.tscn"
 
 [node name="Blueprint" type="Sprite2D" parent="."]
 texture = ExtResource("2_0lara")
@@ -362,32 +373,9 @@ centered = false
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_mk7tt")
 format = 2
-layer_0/tile_data = PackedInt32Array(786451, 524289, 3, 720915, 524289, 1, 720916, 589825, 2, 655380, 655361, 0, 655379, 524289, 0, 786452, 655361, 3, 786453, 720897, 3, 720917, 720897, 1, 655381, 720897, 0, 851988, 1, 2, 917523, 0, 131072, 917524, 0, 131072, 917525, 0, 131072)
-layer_1/tile_data = PackedInt32Array(589843, 0, 131072, 655379, 0, 65536, 720915, 0, 65536, 786451, 0, 65536, 851987, 0, 131072, 589844, 0, 131072, 655380, 0, 65536, 786452, 0, 65536, 851988, 0, 65536, 589845, 0, 131072, 655381, 0, 65536, 720917, 0, 65536, 786453, 0, 65536, 851989, 0, 131072, 589846, 0, 131072, 655382, 0, 131072, 720918, 0, 131072, 786454, 0, 131072, 851990, 0, 131072, 589842, 0, 131072, 655378, 0, 131072, 720914, 0, 131072, 851986, 0, 131072, 786450, 0, 131072, 720916, 0, 65536, 917523, 0, 131072, 917524, 0, 131072, 917525, 0, 131072)
+layer_1/tile_data = PackedInt32Array()
 
 [node name="Rooms" type="Node" parent="."]
-
-[node name="Draggable" parent="Rooms" instance=ExtResource("4_2vhe7")]
-position = Vector2(36, 80)
-room_type = 1
-
-[node name="Draggable2" parent="Rooms" instance=ExtResource("4_2vhe7")]
-position = Vector2(36, 176)
-room_type = 6
-
-[node name="Draggable3" parent="Rooms" instance=ExtResource("4_2vhe7")]
-position = Vector2(36, 128)
-room_type = 3
-
-[node name="Draggable4" parent="Rooms" instance=ExtResource("4_2vhe7")]
-position = Vector2(36, 32)
-room_type = 2
-
-[node name="Draggable5" parent="Rooms" instance=ExtResource("5_0lqmc")]
-position = Vector2(36, 224)
-
-[node name="Draggable6" parent="Rooms" instance=ExtResource("5_0lqmc")]
-position = Vector2(36, 288)
 
 [node name="Button" type="Button" parent="."]
 offset_left = 54.0
@@ -402,3 +390,23 @@ z_index = 2
 [node name="Sprite2D" type="Sprite2D" parent="Cursor"]
 texture = ExtResource("5_ijybh")
 centered = false
+hframes = 2
+
+[node name="Level Title" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 2.0
+offset_right = 196.0
+offset_bottom = 47.0
+text = "Temp
+Title"
+label_settings = SubResource("LabelSettings_7lt0i")
+
+[node name="Description" type="Label" parent="."]
+offset_left = 261.0
+offset_right = 564.0
+offset_bottom = 60.0
+text = "Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit, sed do eiusmod tempor"
+label_settings = SubResource("LabelSettings_13khe")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
