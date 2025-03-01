@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://w77tdmedusl4"]
 
-[ext_resource type="Script" path="res://level.gd" id="1_j63fx"]
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_j63fx"]
 [ext_resource type="Texture2D" uid="uid://bca5s3fdbeusg" path="res://asset/ScrollCanvas.png" id="2_0lara"]
 [ext_resource type="PackedScene" uid="uid://dllrth1hd671" path="res://scenes/room_slot.tscn" id="2_jit5p"]
 [ext_resource type="PackedScene" uid="uid://dbiw45jojndsq" path="res://scenes/oob_tile.tscn" id="3_2s0w5"]
@@ -352,6 +352,7 @@ sources/1 = SubResource("TileSetAtlasSource_yuh6b")
 
 [sub_resource type="SystemFont" id="SystemFont_hsf3w"]
 font_italic = true
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_7lt0i"]
 line_spacing = 1.0
