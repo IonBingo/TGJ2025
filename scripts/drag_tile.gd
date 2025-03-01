@@ -1,30 +1,29 @@
 extends Node2D
 
-# Type of room
+## Fixed room cannot be dragged
+@export var fixed_room: bool = false
+## Type of room
 @export var room_type: Globals.room_types
-# Room valid status
+## Room valid status
 var valid = false
-# Can room be dragged?
+## Can room be dragged?
 var draggable = false
-# Is room over a slot?
+## Is room over a slot?
 var in_slot = false
-# Is the room locked in?
+## Is the room locked in?
 var locked_to_slot = false
-# Is the room overlapping with another or the edge?
+## Is the room overlapping with another or the edge?
 var overlapping = false
-# Slot the room wants to go into
+## Slot the room wants to go into
 var target_slot
-# Slot that the room is in
+## Slot that the room is in
 var occupied_slot
-# Offset for following the mouse
+## Offset for following the mouse
 var offset: Vector2
-# Original location of piece in inventory
+## Original location of piece in inventory
 var start_pos: Vector2
-# Keeps track of when piece was originally a living room
+## Keeps track of when piece was originally a living room
 var is_living: bool = false
-
-signal invalid_wand
-signal valid_wand
 
 # Gets the size of a room in number of cells
 func get_room_size() -> int:
@@ -112,53 +111,56 @@ func rotate_room() -> void:
 
 # Sets up starting position and tracks if the room began as a living room
 func _ready():
+	if fixed_room:
+		modulate = Color.DIM_GRAY
 	is_living = room_type == Globals.room_types.LIVING
 	start_pos = global_position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):	
-	if draggable:
-		$Anchor/RoomTiles.position.y = -10
-		z_index = 1
-		if Globals.current_grab_state == Globals.grab_states.Y:
-			if not in_slot or target_slot.occupied or overlapping:
-				Globals.valid_wand = false
-			else:
-				Globals.valid_wand = true
-		if Input.is_action_just_pressed("click_l"):
-			if Globals.current_grab_state == Globals.grab_states.N:			
-				if locked_to_slot:
-					update_status(false)
-					locked_to_slot = false
-					occupied_slot.occupied = false
-				offset = get_global_mouse_position() - global_position
-				Globals.is_dragging = true
-				Globals.current_grab_state = Globals.grab_states.Y
-			elif Globals.current_grab_state == Globals.grab_states.Y:
-				Globals.is_dragging = false
-				if in_slot and not target_slot.occupied and not overlapping:
-					target_slot.occupied = true
-					position = Vector2(target_slot.position.x - 8, target_slot.position.y - 8)
-					draggable = false
-					in_slot = false
-					locked_to_slot = true
-					occupied_slot = target_slot
+func _process(_delta):
+	if not fixed_room:
+		if draggable:
+			$Anchor/RoomTiles.position.y = -10
+			z_index = 1
+			if Globals.current_grab_state == Globals.grab_states.Y:
+				if not in_slot or target_slot.occupied or overlapping:
+					Globals.valid_wand = false
 				else:
-					if is_living:
-						room_type = Globals.room_types.LIVING
-					update_status(false)
-					draggable = false
-					var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)
-					tween.tween_property(self, "global_position", Vector2(start_pos.x, start_pos.y + Globals.scroll_offset), 0.2)
-				Globals.current_grab_state = Globals.grab_states.N
-		if Globals.current_grab_state == Globals.grab_states.Y: 
-			if not locked_to_slot and Input.is_action_just_pressed("click_r"):
-				rotate_room()
-			var temp = get_global_mouse_position() - offset
-			global_position = Vector2(snapped(temp.x,16), snapped(temp.y,16))
-	else:
-		$Anchor/RoomTiles.position.y = -8
-		z_index = 0
+					Globals.valid_wand = true
+			if Input.is_action_just_pressed("click_l"):
+				if Globals.current_grab_state == Globals.grab_states.N:			
+					if locked_to_slot:
+						update_status(false)
+						locked_to_slot = false
+						occupied_slot.occupied = false
+					offset = get_global_mouse_position() - global_position
+					Globals.is_dragging = true
+					Globals.current_grab_state = Globals.grab_states.Y
+				elif Globals.current_grab_state == Globals.grab_states.Y:
+					Globals.is_dragging = false
+					if in_slot and not target_slot.occupied and not overlapping:
+						target_slot.occupied = true
+						position = Vector2(target_slot.position.x - 8, target_slot.position.y - 8)
+						draggable = false
+						in_slot = false
+						locked_to_slot = true
+						occupied_slot = target_slot
+					else:
+						if is_living:
+							room_type = Globals.room_types.LIVING
+						update_status(false)
+						draggable = false
+						var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)
+						tween.tween_property(self, "global_position", Vector2(start_pos.x, start_pos.y + Globals.scroll_offset), 0.2)
+					Globals.current_grab_state = Globals.grab_states.N
+			if Globals.current_grab_state == Globals.grab_states.Y: 
+				if not locked_to_slot and Input.is_action_just_pressed("click_r"):
+					rotate_room()
+				var temp = get_global_mouse_position() - offset
+				global_position = Vector2(snapped(temp.x,16), snapped(temp.y,16))
+		else:
+			$Anchor/RoomTiles.position.y = -8
+			z_index = 0
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('slots'):
