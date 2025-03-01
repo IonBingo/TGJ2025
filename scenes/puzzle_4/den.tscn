@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://dq6n2ndc0ii0n"]
+
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="1_j8mpb"]
+
+[node name="Draggable" instance=ExtResource("1_j8mpb")]
+
+[node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
+position = Vector2(48, -17)
+polygon = PackedVector2Array(-27, 28, -27, 38, -27, 86, -37, 86, -37, 38, -53, 38, -53, 28)
+
+[node name="CollisionPolygon2D2" parent="Anchor/Edges" index="1"]
+position = Vector2(16, 96)
+polygon = PackedVector2Array(21, -21.3642, 21, -11.1908, 11, -11.1908, 11, -21.3642)
+
+[node name="CollisionPolygon2D3" parent="Anchor/Edges" index="2"]
+position = Vector2(32, -32)
+polygon = PackedVector2Array(-21, 27, 5, 27, 5, 37, -21, 37)
+
+[node name="CollisionPolygon2D5" parent="Anchor/Edges" index="3"]
+position = Vector2(4.00001, 26)
+polygon = PackedVector2Array(-24.1699, -49.5226, -24.1699, -33.5476, -40.2832, -33.5476, -40.2832, -49.5226)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Anchor/Edges" index="4"]
+position = Vector2(20, 10)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(53.1738, -49.5226, 53.1738, -33.5476, -40.2832, -33.5476, -40.2832, -49.5226)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Anchor/Edges" index="5"]
+position = Vector2(68, 47)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -31.9501, -24.1699, 35.1451, -40.2832, 35.1451, -40.2832, -31.9501)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Anchor/Edges" index="6"]
+position = Vector2(84, 12)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -27.1575, -24.1699, 14.3775, -40.2832, 14.3775, -40.2832, -27.1575)
+
+[node name="RoomTiles" parent="Anchor" index="1"]
+layer_0/tile_data = PackedInt32Array(0, 65536, 3, 1, 131072, 3, 2, 327680, 0, 3, 720896, 0, 65539, 720896, 3, 65538, 262144, 2, 131074, 0, 1, 196610, 0, 1, 262146, 0, 2)
+
+[node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
+polygon = PackedVector2Array(37, 69, 27, 69, 27, 5, -5, 5, -5, -5, 53, -5, 53, 21, 37, 21)
