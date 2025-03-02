@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpijud5gf4lp6"]
+
+[ext_resource type="PackedScene" uid="uid://cg80a0n2wjkn8" path="res://scenes/puzzle_8/bruggle.tscn" id="1_kqfjc"]
+
+[node name="Draggable" instance=ExtResource("1_kqfjc")]
+
+[node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
+polygon = PackedVector2Array(-27, -4, -27, 54, -37, 54, -37, -4)
+
+[node name="CollisionPolygon2D2" parent="Anchor/Edges" index="1"]
+position = Vector2(48, 45)
+polygon = PackedVector2Array(5, -2.03468, 5, 8.13873, -21, 8.13873, -21, -18.3121, -11, -18.3121, -11, -2.03468)
+
+[node name="CollisionPolygon2D3" parent="Anchor/Edges" index="2"]
+position = Vector2(16, -32)
+
+[node name="CollisionPolygon2D5" parent="Anchor/Edges" index="3"]
+polygon = PackedVector2Array(-24.1699, -23.9625, -24.1699, -7.98751, -40.2832, -7.98751, -40.2832, -23.9625)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Anchor/Edges" index="4"]
+position = Vector2(80, 80)
+scale = Vector2(1, 0.982955)
+polygon = PackedVector2Array(-11, -21.3642, -11, -11.1908, -21, -11.1908, -21, -21.3642)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Anchor/Edges" index="5"]
+position = Vector2(32, 63)
+polygon = PackedVector2Array(-27, -4, -27, 54, -37, 54, -37, -4)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Anchor/Edges" index="6"]
+position = Vector2(68, 90)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(-24.1699, -23.9625, -24.1699, 43.1326, -40.2832, 43.1326, -40.2832, -23.9625)
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="Anchor/Edges" index="7"]
+position = Vector2(36, 138)
+scale = Vector2(0.620606, 0.625977)
+polygon = PackedVector2Array(1.61133, -23.9625, 1.61133, -7.98752, -40.2832, -7.98751, -40.2832, -23.9625)
+
+[node name="RoomTiles" parent="Anchor" index="1"]
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 1, 131073, 720896, 0, 131072, 262144, 1, 196608, 524288, 3, 196609, 458752, 2, 262145, 262144, 1, 262146, 393216, 0, 262147, 196608, 3, 327682, 720896, 2, 327681, 524288, 1, 393217, 524288, 1, 458753, 524288, 3, 458754, 720896, 3, 393218, 720896, 2)
+
+[node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
+polygon = PackedVector2Array(5, 27, 21, 27, 21, 59, 53, 59, 53, 69, 37, 69, 37, 117, 11, 117, 11, 53, -5, 53, -5, -5, 5, -5)

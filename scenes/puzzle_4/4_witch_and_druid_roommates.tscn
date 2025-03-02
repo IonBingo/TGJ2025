@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=3 uid="uid://d27wbigbfodtn"]
+
+[ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_785vb"]
+[ext_resource type="PackedScene" uid="uid://dq6n2ndc0ii0n" path="res://scenes/puzzle_4/den.tscn" id="2_8krqr"]
+[ext_resource type="PackedScene" uid="uid://dwgasb1lpryw" path="res://scenes/puzzle_4/bedroom.tscn" id="3_f7ags"]
+[ext_resource type="PackedScene" uid="uid://c77cq2qx823i5" path="res://scenes/puzzle_4/library.tscn" id="4_yq8pa"]
+[ext_resource type="PackedScene" uid="uid://s1t5u1ocr05f" path="res://scenes/puzzle_4/kitchen.tscn" id="5_u6eoe"]
+[ext_resource type="PackedScene" uid="uid://cvox5duvqqgq2" path="res://scenes/puzzle_4/sunroom.tscn" id="6_op0le"]
+[ext_resource type="PackedScene" uid="uid://cp1qsrnst0pxe" path="res://scenes/puzzle_4/bathroom.tscn" id="7_32gtk"]
+[ext_resource type="PackedScene" uid="uid://k8hutj1ukxuc" path="res://scenes/puzzle_4/bedroom_2.tscn" id="8_yal25"]
+[ext_resource type="PackedScene" uid="uid://ngtloj060w15" path="res://scenes/puzzle_4/vampire_bedroom.tscn" id="9_goxy7"]
+[ext_resource type="PackedScene" uid="uid://eocq0u7sqjx2" path="res://scenes/puzzle_4/broom_room.tscn" id="10_n2ofi"]
+[ext_resource type="PackedScene" uid="uid://mmckirhsk4cl" path="res://scenes/puzzle_4/coffin_room.tscn" id="11_qu7n2"]
+[ext_resource type="PackedScene" uid="uid://cmh16wgavm6kk" path="res://scenes/puzzle_4/dining_room.tscn" id="12_15eqh"]
+[ext_resource type="PackedScene" uid="uid://e7gmg010jfcd" path="res://scenes/puzzle_4/brewing_room.tscn" id="13_is4qs"]
+[ext_resource type="FontFile" uid="uid://xb1pe86noxb5" path="res://asset/Not Jam UI 15.ttf" id="14_3rgkv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_trrsm"]
+line_spacing = -5.0
+font = ExtResource("14_3rgkv")
+font_size = 15
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Level" instance=ExtResource("1_785vb")]
+next_level = "res://scenes/puzzle_5/5_wizard_vacation_beach_house.tscn"
+
+[node name="TileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(720912, 327681, 2, 720913, 589825, 2, 720914, 589825, 2, 720915, 589825, 2, 720916, 589825, 2, 786449, 589825, 3, 786448, 524289, 3, 786450, 589825, 3, 786451, 589825, 3, 786452, 327681, 2, 851988, 524289, 1, 917524, 524289, 3, 917525, 589825, 3, 917526, 589825, 3, 917527, 589825, 3, 917528, 720897, 3, 851992, 720897, 1, 851991, 589825, 2, 851990, 589825, 2, 851989, 589825, 2, 786453, 589825, 2, 786454, 589825, 2, 786455, 589825, 2, 786456, 393217, 2, 786457, 589825, 3, 786458, 589825, 3, 786459, 589825, 3, 786460, 720897, 3, 720924, 720897, 1, 720923, 589825, 2, 655387, 589825, 2, 655386, 589825, 2, 655385, 589825, 2, 655384, 589825, 2, 655383, 589825, 2, 655382, 589825, 2, 655381, 589825, 2, 655380, 589825, 2, 720917, 589825, 2, 720918, 589825, 2, 720919, 589825, 2, 720920, 589825, 2, 720921, 589825, 2, 720922, 589825, 2, 655388, 720897, 1, 589852, 720897, 1, 524316, 720897, 1, 458780, 720897, 0, 458779, 655361, 0, 458778, 655361, 0, 458777, 655361, 0, 458776, 655361, 0, 458775, 524289, 0, 524312, 589825, 2, 524313, 589825, 2, 524314, 589825, 2, 524315, 589825, 2, 589851, 589825, 2, 589850, 589825, 2, 589849, 589825, 2, 589848, 589825, 2, 589847, 327681, 1, 524311, 524289, 1, 589846, 655361, 0, 589845, 655361, 0, 589844, 655361, 0, 589843, 655361, 0, 589842, 393217, 1, 589841, 589825, 2, 524306, 720897, 0, 524305, 655361, 0, 524304, 524289, 0, 589840, 524289, 1, 655376, 327681, 1, 655377, 589825, 2, 655378, 589825, 2, 655379, 589825, 2, 655375, 524289, 0, 720911, 524289, 3)
+layer_1/tile_data = PackedInt32Array(655376, 0, 65536, 720911, 0, 65536, 655375, 0, 65536, 720912, 0, 65536, 589840, 0, 65536, 524304, 0, 65536, 524305, 0, 65536, 524306, 0, 65536, 589842, 0, 65536, 589841, 0, 65536, 589843, 0, 65536, 589844, 0, 65536, 589845, 0, 65536, 589846, 0, 65536, 589847, 0, 65536, 524311, 0, 65536, 524312, 0, 65536, 524313, 0, 65536, 524314, 0, 65536, 524315, 0, 65536, 524316, 0, 65536, 589852, 0, 65536, 655388, 0, 65536, 720924, 0, 65536, 851988, 0, 65536, 720913, 0, 65536, 655377, 0, 65536, 655378, 0, 65536, 458775, 0, 65536, 458776, 0, 65536, 458777, 0, 65536, 458778, 0, 65536, 458779, 0, 65536, 458780, 0, 65536, 917524, 0, 65536, 917528, 0, 65536, 917527, 0, 65536, 917526, 0, 65536, 917525, 0, 65536, 851989, 0, 65536, 851990, 0, 65536, 851991, 0, 65536, 851992, 0, 65536, 786460, 0, 65536, 786459, 0, 65536, 786458, 0, 65536, 786457, 0, 65536, 786456, 0, 65536, 786455, 0, 65536, 786454, 0, 65536, 786453, 0, 65536, 786452, 0, 65536, 786451, 0, 65536, 786450, 0, 65536, 786449, 0, 65536, 786448, 0, 65536, 720914, 0, 65536, 720915, 0, 65536, 655379, 0, 65536, 655380, 0, 65536, 655381, 0, 65536, 720917, 0, 65536, 720916, 0, 65536, 655382, 0, 65536, 655383, 0, 65536, 655384, 0, 65536, 720920, 0, 65536, 720921, 0, 65536, 720919, 0, 65536, 720918, 0, 65536, 655385, 0, 65536, 655386, 0, 65536, 655387, 0, 65536, 720922, 0, 65536, 720923, 0, 65536, 589851, 0, 65536, 589850, 0, 65536, 589849, 0, 65536, 589848, 0, 65536, 851984, 0, 131072, 851985, 0, 131072, 851986, 0, 131072, 851987, 0, 131072, 917523, 0, 131072, 983059, 0, 131072, 983060, 0, 131072, 983061, 0, 131072, 983062, 0, 131072, 983063, 0, 131072, 983064, 0, 131072, 983065, 0, 131072, 917529, 0, 131072, 851993, 0, 131072, 851994, 0, 131072, 851995, 0, 131072, 851996, 0, 131072, 851997, 0, 131072, 786461, 0, 131072, 720925, 0, 131072, 655389, 0, 131072, 589853, 0, 131072, 524317, 0, 131072, 458781, 0, 131072, 393245, 0, 131072, 393244, 0, 131072, 393243, 0, 131072, 393242, 0, 131072, 393241, 0, 131072, 393240, 0, 131072, 393239, 0, 131072, 393238, 0, 131072, 458774, 0, 131072, 524310, 0, 131072, 524309, 0, 131072, 524308, 0, 131072, 524307, 0, 131072, 458771, 0, 131072, 458770, 0, 131072, 458769, 0, 131072, 458768, 0, 131072, 458767, 0, 131072, 524303, 0, 131072, 589839, 0, 131072, 589838, 0, 131072, 655374, 0, 131072, 720910, 0, 131072, 786446, 0, 131072, 786447, 0, 131072, 851983, 0, 131072)
+
+[node name="Draggable" parent="Rooms" index="0" instance=ExtResource("2_8krqr")]
+position = Vector2(352, 176)
+fixed_room = true
+
+[node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("3_f7ags")]
+position = Vector2(16, 16)
+
+[node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("4_yq8pa")]
+position = Vector2(16, 64)
+
+[node name="Draggable4" parent="Rooms" index="3" instance=ExtResource("5_u6eoe")]
+position = Vector2(32, 128)
+room_type = 1
+
+[node name="Draggable5" parent="Rooms" index="4" instance=ExtResource("6_op0le")]
+position = Vector2(16, 272)
+
+[node name="Draggable6" parent="Rooms" index="5" instance=ExtResource("7_32gtk")]
+position = Vector2(240, 160)
+fixed_room = true
+
+[node name="Draggable7" parent="Rooms" index="6" instance=ExtResource("8_yal25")]
+position = Vector2(14, 545)
+
+[node name="Draggable8" parent="Rooms" index="7" instance=ExtResource("9_goxy7")]
+position = Vector2(16, 208)
+room_type = 3
+
+[node name="Draggable9" parent="Rooms" index="8" instance=ExtResource("10_n2ofi")]
+position = Vector2(16, 464)
+
+[node name="Draggable10" parent="Rooms" index="9" instance=ExtResource("11_qu7n2")]
+position = Vector2(64, 96)
+
+[node name="Draggable11" parent="Rooms" index="10" instance=ExtResource("12_15eqh")]
+position = Vector2(64, 496)
+
+[node name="Draggable12" parent="Rooms" index="11" instance=ExtResource("13_is4qs")]
+position = Vector2(16, 400)
+
+[node name="Room Title" type="Label" parent="Room_Labels" index="0"]
+texture_filter = 1
+offset_left = 66.0
+offset_top = 17.0
+offset_right = 160.0
+offset_bottom = 50.0
+text = "Dryad's
+Room"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title2" type="Label" parent="Room_Labels" index="1"]
+texture_filter = 1
+offset_left = 53.0
+offset_top = 63.0
+offset_right = 147.0
+offset_bottom = 96.0
+text = "Library"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title3" type="Label" parent="Room_Labels" index="2"]
+texture_filter = 1
+offset_left = 49.0
+offset_top = 114.0
+offset_right = 143.0
+offset_bottom = 147.0
+text = "Coffin
+Room"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title4" type="Label" parent="Room_Labels" index="3"]
+texture_filter = 1
+offset_left = 11.0
+offset_top = 175.0
+offset_right = 105.0
+offset_bottom = 208.0
+text = "Kitchen"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title5" type="Label" parent="Room_Labels" index="4"]
+texture_filter = 1
+offset_left = 4.0
+offset_top = 240.0
+offset_right = 98.0
+offset_bottom = 273.0
+text = "Vampire's
+Bedroom"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title6" type="Label" parent="Room_Labels" index="5"]
+texture_filter = 1
+offset_left = 5.0
+offset_top = 368.0
+offset_right = 99.0
+offset_bottom = 401.0
+text = "Sunroom"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title7" type="Label" parent="Room_Labels" index="6"]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 496.0
+offset_right = 59.0
+offset_bottom = 529.0
+text = "Broom
+Room"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title8" type="Label" parent="Room_Labels" index="7"]
+texture_filter = 1
+offset_left = 53.0
+offset_top = 452.0
+offset_right = 147.0
+offset_bottom = 485.0
+text = "Brewing
+Room"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title9" type="Label" parent="Room_Labels" index="8"]
+texture_filter = 1
+offset_left = 61.0
+offset_top = 563.0
+offset_right = 155.0
+offset_bottom = 596.0
+text = "Dining
+Room"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Room Title10" type="Label" parent="Room_Labels" index="9"]
+texture_filter = 1
+offset_left = 6.0
+offset_top = 611.0
+offset_right = 100.0
+offset_bottom = 644.0
+text = "Witch's
+Bedroom"
+label_settings = SubResource("LabelSettings_trrsm")
+
+[node name="Level Title" parent="." index="7"]
+offset_left = 141.0
+offset_top = -1.0
+offset_right = 250.0
+offset_bottom = 44.0
+text = "Witch, 
+Dryad, and 
+Vampire 
+Roommates"
+
+[node name="Description" parent="." index="8"]
+text = "Hello! We have a special request, one of our roommates 
+is a vampire and their bedroom cannot touch any of 
+the exterior walls."

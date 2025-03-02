@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbiw45jojndsq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6lxya"]
+radius = 1.0
+
+[node name="OOB Tile" type="Area2D" groups=["OOB"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6lxya")

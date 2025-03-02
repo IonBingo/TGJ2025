@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5a0b64yu7mft"]
+
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="1_e82ni"]
+
+[node name="Draggable" instance=ExtResource("1_e82ni")]
+
+[node name="Edges" parent="Anchor" index="0"]
+rotation = 1.5708
+
+[node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
+position = Vector2(17, -64)
+polygon = PackedVector2Array(-27, 11, -27, 38, -37, 38, -37, 11)
+
+[node name="CollisionPolygon2D2" parent="Anchor/Edges" index="1"]
+position = Vector2(48, 32)
+polygon = PackedVector2Array(21, -21.3642, 21, -11.1907, -21, -11.1908, -21, -21.3642)
+
+[node name="CollisionPolygon2D3" parent="Anchor/Edges" index="2"]
+position = Vector2(80, -32)
+
+[node name="CollisionPolygon2D5" parent="Anchor/Edges" index="3"]
+position = Vector2(20, -54)
+polygon = PackedVector2Array(53.1738, -23.9626, 53.1738, -7.98753, -40.2832, -7.98751, -40.2832, -23.9625)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Anchor/Edges" index="4"]
+position = Vector2(16, -32)
+polygon = PackedVector2Array(-5, 27, 5, 27, 5, 37, -5, 37)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Anchor/Edges" index="5"]
+position = Vector2(0, -48)
+polygon = PackedVector2Array(-5, 27, 5, 27, 5, 37, -5, 37)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="Anchor/Edges" index="6"]
+position = Vector2(80, -14)
+scale = Vector2(1, 0.982955)
+polygon = PackedVector2Array(-11, -39.6763, -11, 3.05202, -21, 3.05202, -21, -39.6763)
+
+[node name="RoomTiles" parent="Anchor" index="1"]
+layer_0/tile_data = PackedInt32Array(65537, 524288, 0, 65538, 327680, 1, 131074, 589824, 2, 131073, 327680, 1, 131072, 524288, 0, 65539, 720896, 2, 131075, 720896, 2, 196608, 262144, 2, 196609, 589824, 3, 196610, 589824, 3, 196611, 720896, 3, 2, 524288, 0, 3, 720896, 0, 262144, 0, 2)
+
+[node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
+position = Vector2(64, 16)
+rotation = 1.5708
+polygon = PackedVector2Array(53, 69, 11, 69, 11, 53, -5, 53, -5, 37, -21, 37, -21, 11, 37, 11, 37, 59, 53, 59)
