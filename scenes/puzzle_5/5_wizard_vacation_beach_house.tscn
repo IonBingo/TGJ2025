@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=3 uid="uid://hhrl36y2eowt"]
+
+[ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_4mgve"]
+[ext_resource type="PackedScene" uid="uid://u6q7icpah08p" path="res://scenes/l_room.tscn" id="2_6h7by"]
+[ext_resource type="PackedScene" uid="uid://bb462y3i6huxn" path="res://scenes/puzzle_5/beach_house_kitchen.tscn" id="3_jtmwo"]
+[ext_resource type="PackedScene" uid="uid://b5nqgx08wurwd" path="res://scenes/puzzle_5/beach_house_sunroom.tscn" id="4_qvlop"]
+[ext_resource type="PackedScene" uid="uid://cvq6bvi8egq1d" path="res://scenes/puzzle_5/beach_house_sunroom_2.tscn" id="5_e4316"]
+[ext_resource type="PackedScene" uid="uid://bibnggx71w8yi" path="res://scenes/puzzle_5/beach_house_bedroom.tscn" id="6_1les1"]
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="7_hmf2g"]
+[ext_resource type="PackedScene" uid="uid://es813hw2scm0" path="res://scenes/puzzle_5/beach_house_full_bath.tscn" id="8_us25w"]
+[ext_resource type="PackedScene" uid="uid://dbagvc5ns6rpa" path="res://scenes/puzzle_5/beach_house_summoning.tscn" id="9_ltcm6"]
+[ext_resource type="FontFile" uid="uid://xb1pe86noxb5" path="res://asset/Not Jam UI 15.ttf" id="10_0hm8o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kusi0"]
+line_spacing = -5.0
+font = ExtResource("10_0hm8o")
+font_size = 15
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Level" instance=ExtResource("1_4mgve")]
+next_level = "res://scenes/puzzle_6/6_vampire_in_law.tscn"
+
+[node name="TileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(720918, 655361, 2, 983066, 720897, 3, 917530, 720897, 1, 851994, 720897, 1, 786458, 720897, 1, 720922, 720897, 0, 983065, 589825, 3, 917529, 589825, 2, 851993, 589825, 2, 786457, 589825, 2, 720921, 655361, 0, 983064, 589825, 3, 917528, 589825, 2, 851992, 589825, 2, 786456, 589825, 2, 720920, 655361, 0, 983063, 589825, 3, 917527, 589825, 2, 851991, 589825, 2, 786455, 589825, 2, 720919, 655361, 0, 983062, 524289, 3, 917526, 524289, 1, 851990, 524289, 1, 786454, 524289, 1, 655382, 720897, 1, 589846, 720897, 1, 524310, 720897, 1, 458774, 720897, 0, 720917, 589825, 3, 655381, 589825, 2, 589845, 589825, 2, 524309, 589825, 2, 458773, 655361, 0, 720916, 589825, 3, 655380, 589825, 2, 589844, 589825, 2, 524308, 589825, 2, 458772, 655361, 0, 720915, 589825, 3, 655379, 589825, 2, 589843, 589825, 2, 524307, 589825, 2, 458771, 655361, 0, 720914, 524289, 3, 655378, 524289, 1, 589842, 524289, 1, 524306, 524289, 1, 458770, 524289, 0)
+layer_1/tile_data = PackedInt32Array(786449, 0, 131072, 720913, 0, 131072, 655377, 0, 131072, 589841, 0, 131072, 524305, 0, 131072, 458769, 0, 131072, 393233, 0, 131072, 393234, 0, 131072, 393235, 0, 131072, 393236, 0, 131072, 393237, 0, 131072, 393238, 0, 131072, 393239, 0, 131072, 458775, 0, 131072, 524311, 0, 131072, 589847, 0, 131072, 655383, 0, 131072, 655384, 0, 131072, 655385, 0, 131072, 655386, 0, 131072, 655387, 0, 131072, 720923, 0, 131072, 786459, 0, 131072, 851995, 0, 131072, 917531, 0, 131072, 983067, 0, 131072, 1048603, 0, 131072, 1048602, 0, 131072, 1048601, 0, 131072, 1048600, 0, 131072, 1048599, 0, 131072, 1048598, 0, 131072, 1048597, 0, 131072, 983061, 0, 131072, 917525, 0, 131072, 851989, 0, 131072, 786453, 0, 131072, 786452, 0, 131072, 786451, 0, 131072, 786450, 0, 131072, 458770, 0, 65536, 524306, 0, 65536, 589842, 0, 65536, 655378, 0, 65536, 720914, 0, 65536, 458771, 0, 65536, 524307, 0, 65536, 589843, 0, 65536, 655379, 0, 65536, 720915, 0, 65536, 458772, 0, 65536, 524308, 0, 65536, 589844, 0, 65536, 655380, 0, 65536, 720916, 0, 65536, 458773, 0, 65536, 524309, 0, 65536, 589845, 0, 65536, 655381, 0, 65536, 720917, 0, 65536, 458774, 0, 65536, 524310, 0, 65536, 589846, 0, 65536, 655382, 0, 65536, 720918, 0, 65536, 786454, 0, 65536, 851990, 0, 65536, 917526, 0, 65536, 983062, 0, 65536, 720919, 0, 65536, 786455, 0, 65536, 851991, 0, 65536, 917527, 0, 65536, 983063, 0, 65536, 720920, 0, 65536, 786456, 0, 65536, 851992, 0, 65536, 917528, 0, 65536, 983064, 0, 65536, 720921, 0, 65536, 786457, 0, 65536, 851993, 0, 65536, 917529, 0, 65536, 983065, 0, 65536, 720922, 0, 65536, 786458, 0, 65536, 851994, 0, 65536, 917530, 0, 65536, 983066, 0, 65536)
+
+[node name="Draggable" parent="Rooms" index="0" instance=ExtResource("2_6h7by")]
+position = Vector2(32, 48)
+
+[node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("2_6h7by")]
+position = Vector2(32, 112)
+
+[node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("3_jtmwo")]
+position = Vector2(352, 208)
+fixed_room = true
+
+[node name="Draggable4" parent="Rooms" index="3" instance=ExtResource("4_qvlop")]
+position = Vector2(32, 288)
+
+[node name="Draggable5" parent="Rooms" index="4" instance=ExtResource("5_e4316")]
+position = Vector2(32, 367)
+
+[node name="Draggable6" parent="Rooms" index="5" instance=ExtResource("6_1les1")]
+position = Vector2(288, 144)
+fixed_room = true
+
+[node name="Draggable7" parent="Rooms" index="6" instance=ExtResource("7_hmf2g")]
+position = Vector2(16, 432)
+
+[node name="Draggable8" parent="Rooms" index="7" instance=ExtResource("7_hmf2g")]
+position = Vector2(64, 432)
+
+[node name="Draggable9" parent="Rooms" index="8" instance=ExtResource("8_us25w")]
+position = Vector2(32, 240)
+
+[node name="Draggable10" parent="Rooms" index="9" instance=ExtResource("9_ltcm6")]
+position = Vector2(32, 160)
+
+[node name="Room Title" type="Label" parent="Room_Labels" index="0"]
+texture_filter = 1
+offset_left = 33.0
+offset_top = 64.0
+offset_right = 127.0
+offset_bottom = 97.0
+text = "Tiki 
+Bar"
+label_settings = SubResource("LabelSettings_kusi0")
+
+[node name="Room Title2" type="Label" parent="Room_Labels" index="1"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 128.0
+offset_right = 118.0
+offset_bottom = 161.0
+text = "Dining
+Room"
+label_settings = SubResource("LabelSettings_kusi0")
+
+[node name="Room Title3" type="Label" parent="Room_Labels" index="2"]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 202.0
+offset_right = 99.0
+offset_bottom = 237.0
+text = "Minion
+Summoning
+Room"
+label_settings = SubResource("LabelSettings_kusi0")
+
+[node name="Room Title4" type="Label" parent="Room_Labels" index="3"]
+texture_filter = 1
+offset_left = 38.0
+offset_top = 256.0
+offset_right = 132.0
+offset_bottom = 289.0
+text = "Full
+Bath"
+label_settings = SubResource("LabelSettings_kusi0")
+
+[node name="Room Title5" type="Label" parent="Room_Labels" index="4"]
+texture_filter = 1
+offset_left = 10.0
+offset_top = 336.0
+offset_right = 104.0
+offset_bottom = 369.0
+text = "Sunroom
+A"
+label_settings = SubResource("LabelSettings_kusi0")
+horizontal_alignment = 1
+
+[node name="Room Title6" type="Label" parent="Room_Labels" index="5"]
+texture_filter = 1
+offset_left = 7.0
+offset_top = 399.0
+offset_right = 101.0
+offset_bottom = 432.0
+text = "Sunroom
+B"
+label_settings = SubResource("LabelSettings_kusi0")
+horizontal_alignment = 1
+
+[node name="Room Title7" type="Label" parent="Room_Labels" index="6"]
+texture_filter = 1
+offset_left = -1.0
+offset_top = 448.0
+offset_right = 44.0
+offset_bottom = 481.0
+text = "Half
+Bath"
+label_settings = SubResource("LabelSettings_kusi0")
+horizontal_alignment = 1
+
+[node name="Room Title8" type="Label" parent="Room_Labels" index="7"]
+texture_filter = 1
+offset_left = 41.0
+offset_top = 446.0
+offset_right = 105.0
+offset_bottom = 481.0
+text = "Water
+Feature
+Room"
+label_settings = SubResource("LabelSettings_kusi0")
+horizontal_alignment = 1
+
+[node name="Level Title" parent="." index="7"]
+scale = Vector2(0.992481, 1)
+text = "Sorcerer 
+Vacation 
+Beach 
+Home"
+
+[node name="Description" parent="." index="8"]
+text = "My husband and I are looking for a layout that fits 
+within these specs for our new vacation home. Please, 
+whatever you come up with, do NOT, under any 
+circumstances, put the minion summoning room next to 
+the kitchen! The minions will eat all of the food in the 
+cupboards if you do!"

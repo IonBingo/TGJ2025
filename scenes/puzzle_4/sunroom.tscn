@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="1_utc4y"]
 
 [node name="Draggable" instance=ExtResource("1_utc4y")]
+room_type = 2
 
 [node name="CollisionPolygon2D" parent="Anchor/Edges" index="0"]
 polygon = PackedVector2Array(-27, -4, -27, 86, -37, 86, -37, -4)
@@ -25,7 +26,7 @@ scale = Vector2(0.620606, 0.625977)
 polygon = PackedVector2Array(-24.1699, -49.5226, -24.1699, 17.5725, -40.2832, 17.5725, -40.2832, -49.5226)
 
 [node name="RoomTiles" parent="Anchor" index="1"]
-layer_0/tile_data = PackedInt32Array(0, 524288, 0, 65536, 524288, 1, 65537, 589824, 2, 1, 655360, 0, 131072, 524288, 1, 131073, 393216, 2, 196608, 524288, 1, 196609, 720896, 2, 2, 655360, 0, 3, 720896, 0, 65539, 720896, 2, 65538, 589824, 2, 131074, 589824, 3, 131075, 720896, 3, 262144, 524288, 1, 262145, 720896, 2, 327681, 720896, 3, 327680, 524288, 3)
+layer_0/tile_data = PackedInt32Array(0, 524294, 0, 65536, 524294, 1, 65537, 589830, 2, 1, 655366, 0, 131072, 524294, 1, 131073, 393222, 2, 196608, 524294, 1, 196609, 720902, 2, 2, 655366, 0, 3, 720902, 0, 65539, 720902, 2, 65538, 589830, 2, 131074, 589830, 3, 131075, 720902, 3, 262144, 524294, 1, 262145, 720902, 2, 327681, 720902, 3, 327680, 524294, 3)
 
 [node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
 polygon = PackedVector2Array(21, 85, -4, 85, -5, -5, 53, -5, 53, 37, 21, 37)

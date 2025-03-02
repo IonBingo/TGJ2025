@@ -27,7 +27,7 @@ scale = Vector2(0.620606, 0.625977)
 polygon = PackedVector2Array(1.61133, -23.9625, 1.61133, -7.98751, -40.2832, -7.98751, -40.2832, -23.9625)
 
 [node name="RoomTiles" parent="Anchor" index="1"]
-layer_0/tile_data = PackedInt32Array(0, 524288, 0, 65536, 524288, 3, 1, 720896, 0, 65537, 589824, 1, 131073, 524288, 3, 65538, 720896, 0, 131074, 720896, 3)
+layer_0/tile_data = PackedInt32Array(65536, 524295, 3, 1, 720903, 0, 131073, 524295, 3, 65538, 720903, 0, 131074, 720903, 3, 0, 524295, 0, 65537, 589831, 1)
 
 [node name="CollisionPolygon2D" parent="Anchor/RoomShape" index="0"]
 polygon = PackedVector2Array(11, 21, -5, 21, -5, -5, 21, -5, 21, 11, 37, 11, 37, 37, 11, 37)

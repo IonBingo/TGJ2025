@@ -1,11 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://w77tdmedusl4"]
+[gd_scene load_steps=15 format=3 uid="uid://w77tdmedusl4"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_j63fx"]
 [ext_resource type="Texture2D" uid="uid://bca5s3fdbeusg" path="res://asset/ScrollCanvas.png" id="2_0lara"]
+[ext_resource type="Texture2D" uid="uid://j851x33txkca" path="res://asset/DeskBG.png" id="2_6efoi"]
 [ext_resource type="PackedScene" uid="uid://dllrth1hd671" path="res://scenes/room_slot.tscn" id="2_jit5p"]
 [ext_resource type="PackedScene" uid="uid://dbiw45jojndsq" path="res://scenes/oob_tile.tscn" id="3_2s0w5"]
 [ext_resource type="Texture2D" uid="uid://dhxvtkqflx61e" path="res://asset/DottedFloorTileset.png" id="4_jvamc"]
 [ext_resource type="Texture2D" uid="uid://dgw63kkdlvy2f" path="res://asset/Wand.png" id="5_ijybh"]
+[ext_resource type="FontFile" uid="uid://xb1pe86noxb5" path="res://asset/Not Jam UI 15.ttf" id="8_5opqk"]
+[ext_resource type="FontFile" uid="uid://dxoy1xaupvkr" path="res://asset/Not Jam Laika 11.ttf" id="9_xirjd"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_od775"]
 scenes/1/scene = ExtResource("2_jit5p")
@@ -350,22 +353,29 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetScenesCollectionSource_od775")
 sources/1 = SubResource("TileSetAtlasSource_yuh6b")
 
-[sub_resource type="SystemFont" id="SystemFont_hsf3w"]
-font_italic = true
-subpixel_positioning = 0
-
 [sub_resource type="LabelSettings" id="LabelSettings_7lt0i"]
-line_spacing = 1.0
-font = SubResource("SystemFont_hsf3w")
+line_spacing = -5.0
+font = ExtResource("8_5opqk")
 font_size = 15
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_13khe"]
 line_spacing = 1.0
-font_size = 15
+font = ExtResource("9_xirjd")
+font_size = 11
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_j63fx")
 next_level = "res://scenes/test_level.tscn"
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_6efoi")
+centered = false
 
 [node name="Blueprint" type="Sprite2D" parent="."]
 texture = ExtResource("2_0lara")
@@ -379,10 +389,10 @@ layer_1/tile_data = PackedInt32Array()
 [node name="Rooms" type="Node" parent="."]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 54.0
-offset_top = 306.0
-offset_right = 149.0
-offset_bottom = 332.0
+offset_left = 505.0
+offset_top = 308.0
+offset_right = 604.0
+offset_bottom = 339.0
 text = "Next Puzzle"
 
 [node name="Cursor" type="Node2D" parent="."]
@@ -393,21 +403,27 @@ texture = ExtResource("5_ijybh")
 centered = false
 hframes = 2
 
+[node name="Room_Labels" type="Node2D" parent="."]
+
 [node name="Level Title" type="Label" parent="."]
-offset_left = 155.0
-offset_top = 2.0
-offset_right = 196.0
-offset_bottom = 47.0
-text = "Temp
-Title"
+texture_filter = 1
+offset_left = 147.0
+offset_right = 245.0
+offset_bottom = 45.0
+text = "Divination
+Office"
 label_settings = SubResource("LabelSettings_7lt0i")
+horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="."]
-offset_left = 261.0
-offset_right = 564.0
-offset_bottom = 60.0
-text = "Lorem ipsum dolor sit amet, consectetur 
-adipiscing elit, sed do eiusmod tempor"
+texture_filter = 1
+offset_left = 247.0
+offset_top = 1.0
+offset_right = 550.0
+offset_bottom = 61.0
+text = "Lorem impsum fartsum jetsum
+poopsum peesum gordsum freesum
+farticle article particle quarticle"
 label_settings = SubResource("LabelSettings_13khe")
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
