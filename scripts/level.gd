@@ -12,7 +12,7 @@ func _process(_delta):
 		$Cursor/Sprite2D.frame = 0
 	else: 
 		$Cursor/Sprite2D.frame = 1
-	$Cursor.global_position = get_global_mouse_position()
+	$Cursor.global_position = Vector2i(get_global_mouse_position())
 	var all_valid = true
 	var scroll_delta = 0
 	if Globals.current_grab_state == Globals.grab_states.N:
@@ -24,6 +24,8 @@ func _process(_delta):
 			scroll_delta = -20
 			Globals.scroll_offset -= 20
 			Globals.scroll_offset = clamp(Globals.scroll_offset, -500, 0) 
+	$Room_Labels.global_position.y += scroll_delta
+	$Room_Labels.global_position.y = clamp($Room_Labels.global_position.y, -500, 0)
 	for room in $Rooms.get_children():
 		if room.locked_to_slot or room.fixed_room:
 			room.check_valid()

@@ -15,6 +15,8 @@ enum room_types
 	LIVING
 }
 
+var room_colors = [Color("e1a48b"), Color("bc2251"), Color("ff7c5d"), Color("513e5e"), Color("17133c"), Color("ffffff"), Color("ffffff")]
+
 enum grab_states
 {
 	N,

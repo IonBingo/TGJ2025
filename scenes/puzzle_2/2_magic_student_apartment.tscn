@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfi7adjgqogfv"]
+[gd_scene load_steps=11 format=3 uid="uid://dfi7adjgqogfv"]
 
 [ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_s2uok"]
 [ext_resource type="PackedScene" uid="uid://bvwux1f1wy4xt" path="res://scenes/puzzle_2/kitchen.tscn" id="2_ub0vb"]
@@ -8,10 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://gactjrjokh2w" path="res://scenes/puzzle_2/dining_room.tscn" id="6_plckp"]
 [ext_resource type="PackedScene" uid="uid://bbbnyxe7d34ve" path="res://scenes/puzzle_2/bathroom_2.tscn" id="7_yw17g"]
 [ext_resource type="PackedScene" uid="uid://k5dm7eyiebai" path="res://scenes/puzzle_2/practice_room.tscn" id="8_41u2c"]
+[ext_resource type="FontFile" uid="uid://xb1pe86noxb5" path="res://asset/Not Jam UI 15.ttf" id="9_egmow"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wvcgm"]
+line_spacing = -5.0
+font = ExtResource("9_egmow")
+font_size = 15
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Level2" instance=ExtResource("1_s2uok")]
+next_level = "res://scenes/puzzle_3/3_hobbit_house.tscn"
 
-[node name="TileMap" parent="." index="1"]
+[node name="TileMap" parent="." index="2"]
 layer_0/tile_data = PackedInt32Array(786453, 589825, 2, 786454, 589825, 2, 786455, 720897, 1, 720919, 720897, 1, 655383, 720897, 1, 589847, 720897, 1, 524311, 720897, 0, 524310, 655361, 0, 524309, 655361, 0, 589845, 589825, 2, 655381, 589825, 2, 655382, 589825, 2, 589846, 589825, 2, 720918, 589825, 2, 720917, 589825, 2, 851989, 589825, 2, 851990, 589825, 2, 851991, 720897, 1, 917527, 720897, 3, 917526, 589825, 3, 917525, 589825, 3, 524308, 524289, 0, 917524, 524289, 3, 851988, 524289, 1, 786452, 524289, 1, 720916, 524289, 1, 655380, 524289, 1, 589844, 524289, 1)
 layer_1/tile_data = PackedInt32Array(524308, 0, 65536, 589844, 0, 65536, 655380, 0, 65536, 720916, 0, 65536, 786452, 0, 65536, 851988, 0, 65536, 917524, 0, 65536, 524309, 0, 65536, 589845, 0, 65536, 655381, 0, 65536, 720917, 0, 65536, 786453, 0, 65536, 851989, 0, 65536, 917525, 0, 65536, 524310, 0, 65536, 589846, 0, 65536, 655382, 0, 65536, 720918, 0, 65536, 786454, 0, 65536, 851990, 0, 65536, 917526, 0, 65536, 524311, 0, 65536, 589847, 0, 65536, 655383, 0, 65536, 720919, 0, 65536, 786455, 0, 65536, 851991, 0, 65536, 917527, 0, 65536, 458771, 0, 131072, 458772, 0, 131072, 458773, 0, 131072, 458774, 0, 131072, 458775, 0, 131072, 458776, 0, 131072, 524312, 0, 131072, 589848, 0, 131072, 655384, 0, 131072, 720920, 0, 131072, 786456, 0, 131072, 851992, 0, 131072, 917528, 0, 131072, 983064, 0, 131072, 983063, 0, 131072, 983062, 0, 131072, 983061, 0, 131072, 983060, 0, 131072, 983059, 0, 131072, 917523, 0, 131072, 851987, 0, 131072, 786451, 0, 131072, 720915, 0, 131072, 655379, 0, 131072, 589843, 0, 131072, 524307, 0, 131072)
 
@@ -19,22 +29,112 @@ layer_1/tile_data = PackedInt32Array(524308, 0, 65536, 589844, 0, 65536, 655380,
 position = Vector2(16, 32)
 
 [node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("3_y4fov")]
-position = Vector2(52, 82)
+position = Vector2(48, 80)
 
 [node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("4_o4wsi")]
-position = Vector2(64, 130)
+position = Vector2(64, 160)
 
 [node name="Draggable4" parent="Rooms" index="3" instance=ExtResource("4_o4wsi")]
-position = Vector2(15, 156)
+position = Vector2(16, 160)
 
 [node name="Draggable5" parent="Rooms" index="4" instance=ExtResource("5_56ysq")]
-position = Vector2(25, 292)
+position = Vector2(16, 336)
 
 [node name="Draggable6" parent="Rooms" index="5" instance=ExtResource("6_plckp")]
-position = Vector2(34, 183)
+position = Vector2(16, 208)
 
 [node name="Draggable7" parent="Rooms" index="6" instance=ExtResource("7_yw17g")]
-position = Vector2(17, 112)
+position = Vector2(16, 112)
 
 [node name="Draggable8" parent="Rooms" index="7" instance=ExtResource("8_41u2c")]
-position = Vector2(20, 222)
+position = Vector2(16, 256)
+
+[node name="Room Title" type="Label" parent="Room_Labels" index="0"]
+texture_filter = 1
+offset_left = 1.0
+offset_top = 64.0
+offset_right = 95.0
+offset_bottom = 97.0
+text = "Kitchen"
+label_settings = SubResource("LabelSettings_wvcgm")
+
+[node name="Room Title2" type="Label" parent="Room_Labels" index="1"]
+texture_filter = 1
+offset_left = 2.0
+offset_top = 96.0
+offset_right = 96.0
+offset_bottom = 129.0
+text = "Bedroom"
+label_settings = SubResource("LabelSettings_wvcgm")
+
+[node name="Room Title3" type="Label" parent="Room_Labels" index="2"]
+texture_filter = 1
+offset_left = 4.0
+offset_top = 128.0
+offset_right = 98.0
+offset_bottom = 161.0
+text = "Full Bath"
+label_settings = SubResource("LabelSettings_wvcgm")
+
+[node name="Room Title4" type="Label" parent="Room_Labels" index="3"]
+texture_filter = 1
+offset_left = 48.0
+offset_top = 176.0
+offset_right = 142.0
+offset_bottom = 209.0
+text = "Office"
+label_settings = SubResource("LabelSettings_wvcgm")
+
+[node name="Room Title5" type="Label" parent="Room_Labels" index="4"]
+texture_filter = 1
+offset_left = 3.0
+offset_top = 176.0
+offset_right = 46.0
+offset_bottom = 209.0
+text = "Half
+Bath"
+label_settings = SubResource("LabelSettings_wvcgm")
+horizontal_alignment = 1
+
+[node name="Room Title6" type="Label" parent="Room_Labels" index="5"]
+texture_filter = 1
+offset_left = 11.0
+offset_top = 224.0
+offset_right = 70.0
+offset_bottom = 257.0
+text = "Dining 
+Room"
+label_settings = SubResource("LabelSettings_wvcgm")
+horizontal_alignment = 1
+
+[node name="Room Title7" type="Label" parent="Room_Labels" index="6"]
+texture_filter = 1
+offset_left = -15.0
+offset_top = 269.0
+offset_right = 105.0
+offset_bottom = 304.0
+text = "Magic 
+Sparing
+Room"
+label_settings = SubResource("LabelSettings_wvcgm")
+horizontal_alignment = 1
+
+[node name="Room Title8" type="Label" parent="Room_Labels" index="7"]
+texture_filter = 1
+offset_left = 27.0
+offset_top = 355.0
+offset_right = 121.0
+offset_bottom = 388.0
+text = "Den"
+label_settings = SubResource("LabelSettings_wvcgm")
+
+[node name="Level Title" parent="." index="7"]
+text = "Wizard
+Student's
+Apartment"
+
+[node name="Description" parent="." index="8"]
+text = "Yo, I need to have my apartment layout situated 
+pronto before classes start tomorrow, and I don’t 
+know how to warp these rooms around! I guess 
+that’s why I’m still in school…"

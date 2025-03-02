@@ -47,11 +47,13 @@ func check_valid() -> void:
 					largest_size = size
 					largest_neighbor = neighbor
 		if largest_neighbor:
+			$Anchor/RoomTiles.modulate = Globals.room_colors[largest_neighbor.room_type]
 			room_type = largest_neighbor.room_type
 		else:
+			$Anchor/RoomTiles.modulate = Globals.room_colors[Globals.room_types.LIVING]
 			room_type = Globals.room_types.LIVING
-			update_status(false)
-					
+			update_status(false)				
+	
 	match room_type:
 		Globals.room_types.NORMAL:
 			update_status(true)
@@ -105,9 +107,11 @@ func rotate_room() -> void:
 	# Erase all tiles
 	for cell in used_cells:
 		$Anchor/RoomTiles.erase_cell(0, cell)
-	
+	print($Anchor/RoomTiles.get_used_cells(0).size())
+	print(used_cells.size())
 	# Draw tiles in new cells
 	$Anchor/RoomTiles.set_cells_terrain_connect(0, rotated_cells, tile_data.get_terrain_set(), tile_data.get_terrain(), true)
+	print($Anchor/RoomTiles.get_used_cells(0).size())
 
 # Sets up starting position and tracks if the room began as a living room
 func _ready():
@@ -150,6 +154,8 @@ func _process(_delta):
 							room_type = Globals.room_types.LIVING
 						update_status(false)
 						draggable = false
+						while int($Anchor/SelectionPoint.rotation_degrees) % 360 != 0:
+							rotate_room()
 						var tween = create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SPRING)
 						tween.tween_property(self, "global_position", Vector2(start_pos.x, start_pos.y + Globals.scroll_offset), 0.2)
 					Globals.current_grab_state = Globals.grab_states.N

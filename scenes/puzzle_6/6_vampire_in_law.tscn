@@ -1,0 +1,138 @@
+[gd_scene load_steps=12 format=3 uid="uid://dibo3deko232e"]
+
+[ext_resource type="PackedScene" uid="uid://w77tdmedusl4" path="res://scenes/test_level.tscn" id="1_136jc"]
+[ext_resource type="PackedScene" uid="uid://el7q3rapnxq4" path="res://scenes/drag_tile.tscn" id="2_674yr"]
+[ext_resource type="PackedScene" uid="uid://b0f3om6eu0ijh" path="res://scenes/puzzle_6/kitchen.tscn" id="3_oklst"]
+[ext_resource type="PackedScene" uid="uid://cv6sow7jkw7m8" path="res://scenes/puzzle_6/minion_summoning.tscn" id="4_y1ih5"]
+[ext_resource type="PackedScene" uid="uid://cftluqag2ks6a" path="res://scenes/puzzle_6/master_bedroom.tscn" id="5_3w4ow"]
+[ext_resource type="PackedScene" uid="uid://bnfsv0hp2evfb" path="res://scenes/puzzle_6/vampire_guest.tscn" id="6_j5ki4"]
+[ext_resource type="PackedScene" uid="uid://dcsmn3nw6vc7s" path="res://scenes/puzzle_6/sunroom.tscn" id="7_cco5g"]
+[ext_resource type="PackedScene" uid="uid://b02qvjlom0nce" path="res://scenes/puzzle_6/den.tscn" id="8_fmtnx"]
+[ext_resource type="PackedScene" uid="uid://d4hkv6u84clyk" path="res://scenes/puzzle_6/dining_room.tscn" id="9_ol5q1"]
+[ext_resource type="FontFile" uid="uid://xb1pe86noxb5" path="res://asset/Not Jam UI 15.ttf" id="10_joq3x"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c6tyy"]
+line_spacing = -5.0
+font = ExtResource("10_joq3x")
+font_size = 15
+font_color = Color(1, 0.505882, 0.239216, 1)
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Level" instance=ExtResource("1_136jc")]
+next_level = "res://scenes/puzzle_7/7_wandmaker_residence.tscn"
+
+[node name="TileMap" parent="." index="2"]
+layer_0/tile_data = PackedInt32Array(786457, 720897, 3, 720921, 720897, 1, 655385, 720897, 1, 589849, 720897, 1, 524313, 720897, 0, 786456, 589825, 3, 720920, 589825, 2, 655384, 589825, 2, 589848, 589825, 2, 524312, 655361, 0, 786455, 589825, 3, 720919, 589825, 2, 655383, 589825, 2, 589847, 589825, 2, 524311, 655361, 0, 786454, 589825, 3, 720918, 589825, 2, 655382, 589825, 2, 589846, 327681, 1, 524310, 524289, 0, 786453, 589825, 3, 720917, 589825, 2, 655381, 589825, 2, 589845, 655361, 0, 786452, 589825, 3, 720916, 589825, 2, 655380, 589825, 2, 589844, 655361, 0, 786451, 524289, 3, 720915, 524289, 1, 655379, 524289, 1, 589843, 524289, 0)
+layer_1/tile_data = PackedInt32Array(589843, 0, 65536, 589844, 0, 65536, 589845, 0, 65536, 589846, 0, 65536, 589847, 0, 65536, 524310, 0, 65536, 524311, 0, 65536, 524312, 0, 65536, 524313, 0, 65536, 589849, 0, 65536, 655385, 0, 65536, 720921, 0, 65536, 786457, 0, 65536, 786456, 0, 65536, 786455, 0, 65536, 786454, 0, 65536, 786453, 0, 65536, 786452, 0, 65536, 786451, 0, 65536, 720915, 0, 65536, 655379, 0, 65536, 655380, 0, 65536, 720916, 0, 65536, 720917, 0, 65536, 655381, 0, 65536, 655382, 0, 65536, 589848, 0, 65536, 655384, 0, 65536, 720920, 0, 65536, 720919, 0, 65536, 655383, 0, 65536, 720918, 0, 65536, 851986, 0, 131072, 851987, 0, 131072, 851988, 0, 131072, 851989, 0, 131072, 851990, 0, 131072, 851991, 0, 131072, 851992, 0, 131072, 851993, 0, 131072, 851994, 0, 131072, 786458, 0, 131072, 720922, 0, 131072, 655386, 0, 131072, 589850, 0, 131072, 524314, 0, 131072, 458778, 0, 131072, 458777, 0, 131072, 458776, 0, 131072, 458775, 0, 131072, 458774, 0, 131072, 458773, 0, 131072, 524309, 0, 131072, 524308, 0, 131072, 524307, 0, 131072, 524306, 0, 131072, 589842, 0, 131072, 655378, 0, 131072, 720914, 0, 131072, 786450, 0, 131072)
+
+[node name="Draggable" parent="Rooms" index="0" instance=ExtResource("2_674yr")]
+position = Vector2(16, 16)
+
+[node name="Draggable2" parent="Rooms" index="1" instance=ExtResource("3_oklst")]
+position = Vector2(304, 176)
+fixed_room = true
+
+[node name="Draggable3" parent="Rooms" index="2" instance=ExtResource("4_y1ih5")]
+position = Vector2(16, 64)
+
+[node name="Draggable4" parent="Rooms" index="3" instance=ExtResource("5_3w4ow")]
+position = Vector2(32, 304)
+
+[node name="Draggable5" parent="Rooms" index="4" instance=ExtResource("6_j5ki4")]
+position = Vector2(16, 144)
+
+[node name="Draggable6" parent="Rooms" index="5" instance=ExtResource("7_cco5g")]
+position = Vector2(16, 224)
+
+[node name="Draggable7" parent="Rooms" index="6" instance=ExtResource("8_fmtnx")]
+position = Vector2(64, 256)
+
+[node name="Draggable8" parent="Rooms" index="7" instance=ExtResource("9_ol5q1")]
+position = Vector2(64, 96)
+
+[node name="Room Title5" type="Label" parent="Room_Labels" index="0"]
+texture_filter = 1
+offset_left = 4.0
+offset_top = 33.0
+offset_right = 98.0
+offset_bottom = 66.0
+text = "Bathroom"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title6" type="Label" parent="Room_Labels" index="1"]
+texture_filter = 1
+offset_left = 18.0
+offset_top = 54.0
+offset_right = 112.0
+offset_bottom = 87.0
+text = "Minion
+Room"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title7" type="Label" parent="Room_Labels" index="2"]
+texture_filter = 1
+offset_left = 8.0
+offset_top = 112.0
+offset_right = 62.0
+offset_bottom = 137.0
+text = "Dining
+Room"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title8" type="Label" parent="Room_Labels" index="3"]
+texture_filter = 1
+offset_left = 34.0
+offset_top = 177.0
+offset_right = 105.0
+offset_bottom = 212.0
+text = "Vampire
+Guest
+Room"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title9" type="Label" parent="Room_Labels" index="4"]
+texture_filter = 1
+offset_left = 34.0
+offset_top = 219.0
+offset_right = 105.0
+offset_bottom = 240.0
+text = "Sunroom"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title10" type="Label" parent="Room_Labels" index="5"]
+texture_filter = 1
+offset_left = 19.0
+offset_top = 279.0
+offset_right = 56.0
+offset_bottom = 300.0
+text = "Den"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Room Title11" type="Label" parent="Room_Labels" index="6"]
+texture_filter = 1
+offset_left = 51.0
+offset_top = 337.0
+offset_right = 123.0
+offset_bottom = 362.0
+text = "Master 
+Bedroom"
+label_settings = SubResource("LabelSettings_c6tyy")
+horizontal_alignment = 1
+
+[node name="Level Title" parent="." index="7"]
+text = "Vampire 
+In-Laws"
+
+[node name="Description" parent="." index="8"]
+text = "We’re renovating our house so that my sister in-law, 
+who is a vampire, can stay with us no problem! But, 
+we are having issues with placing her bedroom, the s
+unroom, and the minions around our immovable kitchen. 
+Please great Archimancer, help us!"
